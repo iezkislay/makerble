@@ -1,0 +1,3 @@
+Assessment - 2
+
+Created YAML files to deploy the same Application on Kubernetes using minikube. 

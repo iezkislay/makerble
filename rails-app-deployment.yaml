@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: budgy-app
+  namespace: kislay-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: budgy-app
+  template:
+    metadata:
+      labels:
+        app: budgy-app
+    spec:
+      containers:
+        - name: budgy-app
+          image: iezkislay/budget-app:latest 
+          env:
+            - name: DATABASE_URL
+              value: postgres://budgy:yourpassword@postgres:5432/Budgy_development
+          ports:
+            - containerPort: 3000
